@@ -143,3 +143,9 @@ async def health():
 async def suggestions():
     """Return suggested starter questions."""
     return {"suggestions": SUGGESTIONS}
+
+# Mount frontend directory for easy local testing
+from fastapi.staticfiles import StaticFiles
+frontend_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "..", "frontend")
+if os.path.exists(frontend_dir):
+    app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
