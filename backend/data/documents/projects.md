@@ -1,85 +1,71 @@
 # Projects
 
-## Pangochain — Blockchain Security Framework
+## ARGUS — AI-Powered Smart Glasses for the Visually Impaired
 
 ### Overview
-Pangochain is an open-source blockchain framework designed to provide enhanced security features for decentralized applications. It implements novel cryptographic protocols that improve transaction verification speed while maintaining strong security guarantees.
+ARGUS is an on-device AI navigation system designed to empower visually impaired individuals by integrating real-time object detection, depth estimation, and voice-command NLU on a Jetson Orin Nano.
 
 ### Technical Details
-- **Language**: Python, with performance-critical components in Rust
-- **Architecture**: Modular blockchain framework with pluggable consensus mechanisms
-- **Key Innovation**: Custom hash-chain verification protocol that reduces block validation time by 40% compared to traditional approaches
-- **Cryptography**: Implements SHA-256, ECDSA signing, and a custom Merkle tree variant optimized for high-throughput transaction verification
-
-### Features
-- Lightweight node implementation suitable for resource-constrained environments
-- RESTful API for interacting with the blockchain network
-- Built-in smart contract support with a sandboxed execution environment
-- Comprehensive logging and audit trail for all network activities
-- Dockerized deployment for easy setup and testing
-
-### Key Achievements
-- Successfully processed 1,000+ transactions per second in benchmark testing
-- Implemented integrity verification through cryptographic hash chains
-- Open-sourced with documentation and example applications
-- Presented at university blockchain symposium
-
-### Repository
-Available on GitHub with full documentation, unit tests, and deployment guides.
+- **Technologies**: Python, YOLOv8, TensorRT, Whisper
+- **Hardware**: Jetson Orin Nano
+- **Key Features**: 
+  - Real-time object detection to navigate surroundings
+  - Depth estimation for obstacle avoidance
+  - Voice-command NLU (Natural Language Understanding) for interactive assistance
 
 ---
 
-## ML Research — Domain Adaptation with SegFormer and Mixture of Experts
+## Portable Braille — Making Print Accessible
 
 ### Overview
-Research project investigating how Mixture of Experts (MoE) architectures can improve domain adaptation performance in semantic segmentation tasks. The work focuses on adapting SegFormer models trained on one visual domain to perform well on a different target domain without extensive retraining.
+Engineered a low-cost, portable Braille printer that embosses digital text onto A4 paper using stepper motors, solenoid actuators, and IR sensors.
 
-### Problem Statement
-Semantic segmentation models often suffer significant performance drops when applied to domains different from their training data (e.g., a model trained on daytime driving scenes performing poorly on nighttime or rainy conditions). Traditional fine-tuning approaches require large amounts of labeled target domain data, which is expensive and time-consuming to obtain.
+### Technical Details
+- **Technologies**: Raspberry Pi, Python, OCR (Optical Character Recognition), 3D Printing
+- **Hardware**: Stepper motors, solenoid actuators, IR sensors
+- **Key Features**: 
+  - Converts digital text into physical Braille
+  - Low-cost and portable form factor
+  - Uses 3D printed components for accessibility and customizability
+- **Repository**: Available on GitHub (https://github.com/namaray/Portable-Braille-Printer)
 
-### Approach
-- **Base Model**: SegFormer (hierarchical Transformer encoder with a lightweight MLP decoder)
-- **MoE Integration**: Added Mixture of Experts layers that learn to route different input features to specialized expert networks based on domain characteristics
-- **Training Strategy**: Two-phase training — first pre-train on source domain, then adapt using MoE routing with minimal target domain supervision
-- **Evaluation**: Tested on Cityscapes → ACDC (adverse conditions) and GTA5 → Cityscapes benchmarks
+---
 
-### Results
-- Achieved 12% improvement in mean Intersection over Union (mIoU) compared to vanilla SegFormer domain adaptation
-- MoE routing learned interpretable specializations: some experts specialized in weather-related features, others in lighting conditions
-- Reduced the need for target domain labeled data by 60% compared to full fine-tuning approaches
+## ShareStrength — Empowering Individuals with Disabilities
 
-### Technologies Used
-- PyTorch, Hugging Face Transformers, MMSegmentation
-- NVIDIA A100 GPUs for training
-- Weights & Biases for experiment tracking
-- Python, NumPy, OpenCV for data preprocessing
+### Overview
+Built a web platform connecting people with disabilities to trusted helpers using AI-based recommendations and accessibility tools.
 
-### Publications
-Research paper in preparation for submission to a computer vision conference.
+### Technical Details
+- **Technologies**: PHP, MySQL, JavaScript, Tailwind CSS
+- **Features**:
+  - Secure and accessible user interface
+  - AI-based recommendations to match users with helpers
+  - Integrated accessibility features tailored for diverse needs
+- **Repository**: Available on GitHub (https://github.com/namaray/ShareStrength)
+
+---
+
+## Maternify — Prenatal & Postnatal Health Tracker
+
+### Overview
+A prenatal/postnatal symptom tracking platform with intelligent risk-flag generation to help expecting and new mothers monitor their health. I served as the main frontend designer for this project.
+
+### Technical Details
+- **Technologies**: Python, AI APIs, React
+- **Features**:
+  - Intuitive and calming frontend design
+  - Symptom tracking tailored to different pregnancy stages
+  - Intelligent risk-flag generation leveraging AI APIs
 
 ---
 
 ## Portfolio Website
 
 ### Overview
-Personal portfolio website showcasing projects, skills, and professional experience. Built with modern web technologies and featuring an interactive resume chatbot (this project).
+Personal portfolio website showcasing projects, skills, achievements, and professional experience. 
 
 ### Technical Details
-- **Frontend**: HTML, CSS, JavaScript with responsive design
-- **Hosting**: Deployed on Vercel/Netlify
-- **Features**: Project showcase, blog section, contact form, interactive resume chatbot widget
-- **Design**: Dark theme with glassmorphism effects, smooth animations, and mobile-first approach
-
----
-
-## AI Accessibility Tool — Hackathon Winner
-
-### Overview
-An AI-powered tool that automatically generates alt-text descriptions for images on websites, making web content more accessible for visually impaired users. Won 1st place at University Hackathon 2024.
-
-### Technical Details
-- Built in 36 hours during a hackathon
-- Uses a fine-tuned vision-language model for image captioning
-- Browser extension that scans web pages and fills in missing alt-text
-- Backend API processing images and returning descriptive captions
-- **Tech stack**: Python, FastAPI, Hugging Face models, JavaScript browser extension
+- **Frontend**: HTML, CSS, JavaScript (React/Next.js) with responsive design
+- **Features**: Project showcase, skills arsenal, interactive resume chatbot
+- **Design**: Dark theme, smooth animations, and high-quality visuals
