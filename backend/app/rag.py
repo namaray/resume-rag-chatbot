@@ -180,9 +180,10 @@ def generate_answer(
     context = "\n\n---\n\n".join(context_parts)
 
     # Log retrieved chunks for debugging
+    scores_str = [f"{r['score']:.3f}" for r in results]
     logger.info(
         f"Query: '{question}' → {len(results)} chunks retrieved "
-        f"(scores: {[f'{r[\"score\"]:.3f}' for r in results]})"
+        f"(scores: {scores_str})"
     )
 
     # ── Step 4: Generate answer with Gemini (or Fallback) ───────
