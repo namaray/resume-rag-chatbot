@@ -6,6 +6,7 @@ and generates grounded answers using Gemini.
 import time
 import logging
 from google import genai
+from groq import Groq
 
 from app.config import get_settings
 from app.embeddings import embed_query
@@ -184,8 +185,9 @@ def generate_answer(
         f"(scores: {[f'{r['score']:.3f}' for r in results]})"
     )
 
-    # ── Step 4: Generate answer with Gemini ───────────────────
+    # ── Step 4: Generate answer with Gemini (or Fallback) ───────
     user_message = CONTEXT_TEMPLATE.format(context=context, question=question)
+    model_used = settings.gemini_chat_model
 
     try:
         client = _get_client()
@@ -194,23 +196,41 @@ def generate_answer(
             contents=user_message,
             config=genai.types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
-                temperature=0.3,  # Low temperature for factual answers
+                temperature=0.3,
                 max_output_tokens=1024,
             ),
         )
         answer = response.text or "I wasn't able to generate a response. Please try again."
     except Exception as e:
-        logger.error(f"Gemini generation failed: {e}")
-        answer = (
-            "I'm having trouble generating a response right now. "
-            "This might be due to API rate limits. Please try again in a moment."
-        )
+        logger.error(f"Gemini generation failed: {e}. Attempting Groq fallback...")
+        if settings.groq_api_key and settings.groq_api_key != "your_groq_api_key_here":
+            try:
+                groq_client = Groq(api_key=settings.groq_api_key)
+                completion = groq_client.chat.completions.create(
+                    model=settings.groq_chat_model,
+                    messages=[
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user", "content": user_message}
+                    ],
+                    temperature=0.3,
+                    max_tokens=1024,
+                )
+                answer = completion.choices[0].message.content or "I wasn't able to generate a response."
+                model_used = settings.groq_chat_model
+            except Exception as groq_e:
+                logger.error(f"Groq generation failed: {groq_e}")
+                answer = "I'm having trouble generating a response right now. Please try again in a moment."
+        else:
+            answer = (
+                "I'm having trouble generating a response right now. "
+                "This might be due to API rate limits. Please try again in a moment."
+            )
 
     elapsed_ms = int((time.time() - start_time) * 1000)
 
     return ChatResponse(
         answer=answer,
         sources=sources,
-        model_used=settings.gemini_chat_model,
+        model_used=model_used,
         response_time_ms=elapsed_ms,
     )

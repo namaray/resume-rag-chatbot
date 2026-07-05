@@ -17,6 +17,10 @@ class Settings(BaseSettings):
     gemini_chat_model: str = "gemini-2.5-flash"
     gemini_embedding_model: str = "gemini-embedding-001"
 
+    # ── Groq Models (Fallback) ────────────────────────────────
+    groq_api_key: str = ""
+    groq_chat_model: str = "llama-3.3-70b-versatile"
+
     # ── CORS ──────────────────────────────────────────────────
     cors_origins: str = "*"
 
