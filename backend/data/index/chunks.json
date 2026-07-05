@@ -1,0 +1,134 @@
+[
+  {
+    "text": "# About Me\n\n## Who I Am\nI'm a computer science student and aspiring software engineer with a deep passion for building systems that sit at the intersection of machine learning, security, and practical software engineering. I believe the best technology solves real problems elegantly, and I'm driven by the challenge of turning cutting-edge research into tools people can actually use.\n\n## What Drives Me\nMy work spans three main areas that I find endlessly fascinating:",
+    "source_file": "bio.md",
+    "chunk_index": 0,
+    "heading": "About Me"
+  },
+  {
+    "text": "ems elegantly, and I'm driven by the challenge of turning cutting-edge research into tools people can actually use.\n\n## What Drives Me\nMy work spans three main areas that I find endlessly fascinating:\n\n**Machine Learning & AI**: I'm particularly interested in how we can make ML models more robust and adaptable. My current research on domain adaptation with Mixture of Experts architectures is exploring how models can gracefully handle real-world variability — something that's critical for deploying AI systems that work reliably outside the lab.\n\n**Blockchain & Cryptography**: Through Pangochain, I've explored how cryptographic primitives can be combined in novel ways to build secure, efficient distributed systems. I'm fascinated by the mathematical foundations of trust in digital systems.",
+    "source_file": "bio.md",
+    "chunk_index": 1,
+    "heading": "What Drives Me"
+  },
+  {
+    "text": "in, I've explored how cryptographic primitives can be combined in novel ways to build secure, efficient distributed systems. I'm fascinated by the mathematical foundations of trust in digital systems.\n\n**Full-Stack Engineering**: I enjoy the craft of building complete, polished applications — from designing clean APIs to creating intuitive user interfaces. There's a unique satisfaction in deploying a system that real users interact with.",
+    "source_file": "bio.md",
+    "chunk_index": 2,
+    "heading": ""
+  },
+  {
+    "text": "craft of building complete, polished applications — from designing clean APIs to creating intuitive user interfaces. There's a unique satisfaction in deploying a system that real users interact with.\n\n## My Approach\nI believe in:\n- **Learning by building**: Every concept I study, I implement. Theory without practice is incomplete.\n- **Open source**: Sharing knowledge and code makes everyone better. All my major projects are open-sourced.\n- **Clean code**: Readable, well-tested, well-documented code is non-negotiable.\n- **Continuous learning**: The field moves fast, and I'm always exploring new techniques, papers, and tools.",
+    "source_file": "bio.md",
+    "chunk_index": 3,
+    "heading": "My Approach"
+  },
+  {
+    "text": "n-sourced.\n- **Clean code**: Readable, well-tested, well-documented code is non-negotiable.\n- **Continuous learning**: The field moves fast, and I'm always exploring new techniques, papers, and tools.\n\n## What I'm Looking For\nI'm seeking opportunities where I can contribute to meaningful engineering challenges — whether that's building ML infrastructure, developing secure systems, or creating developer tools. I thrive in environments where I can learn from experienced engineers while bringing my own energy and fresh perspectives to the team.",
+    "source_file": "bio.md",
+    "chunk_index": 4,
+    "heading": "What I'm Looking For"
+  },
+  {
+    "text": "# Projects\n\n## Pangochain — Blockchain Security Framework\n\n### Overview\nPangochain is an open-source blockchain framework designed to provide enhanced security features for decentralized applications. It implements novel cryptographic protocols that improve transaction verification speed while maintaining strong security guarantees.\n\n### Technical Details\n- **Language**: Python, with performance-critical components in Rust\n- **Architecture**: Modular blockchain framework with pluggable consensus mechanisms\n- **Key Innovation**: Custom hash-chain verification protocol that reduces block validation time by 40% compared to traditional approaches\n- **Cryptography**: Implements SHA-256, ECDSA signing, and a custom Merkle tree variant optimized for high-throughput transaction verification",
+    "source_file": "projects.md",
+    "chunk_index": 0,
+    "heading": "Projects"
+  },
+  {
+    "text": "validation time by 40% compared to traditional approaches\n- **Cryptography**: Implements SHA-256, ECDSA signing, and a custom Merkle tree variant optimized for high-throughput transaction verification\n\n### Features\n- Lightweight node implementation suitable for resource-constrained environments\n- RESTful API for interacting with the blockchain network\n- Built-in smart contract support with a sandboxed execution environment\n- Comprehensive logging and audit trail for all network activities\n- Dockerized deployment for easy setup and testing",
+    "source_file": "projects.md",
+    "chunk_index": 1,
+    "heading": "Features"
+  },
+  {
+    "text": "n network\n- Built-in smart contract support with a sandboxed execution environment\n- Comprehensive logging and audit trail for all network activities\n- Dockerized deployment for easy setup and testing\n\n### Key Achievements\n- Successfully processed 1,000+ transactions per second in benchmark testing\n- Implemented integrity verification through cryptographic hash chains\n- Open-sourced with documentation and example applications\n- Presented at university blockchain symposium\n\n### Repository\nAvailable on GitHub with full documentation, unit tests, and deployment guides.\n\n---\n\n## ML Research — Domain Adaptation with SegFormer and Mixture of Experts",
+    "source_file": "projects.md",
+    "chunk_index": 2,
+    "heading": "Key Achievements"
+  },
+  {
+    "text": "sity blockchain symposium\n\n### Repository\nAvailable on GitHub with full documentation, unit tests, and deployment guides.\n\n---\n\n## ML Research — Domain Adaptation with SegFormer and Mixture of Experts\n\n### Overview\nResearch project investigating how Mixture of Experts (MoE) architectures can improve domain adaptation performance in semantic segmentation tasks. The work focuses on adapting SegFormer models trained on one visual domain to perform well on a different target domain without extensive retraining.",
+    "source_file": "projects.md",
+    "chunk_index": 3,
+    "heading": "Repository"
+  },
+  {
+    "text": "tation performance in semantic segmentation tasks. The work focuses on adapting SegFormer models trained on one visual domain to perform well on a different target domain without extensive retraining.\n\n### Problem Statement\nSemantic segmentation models often suffer significant performance drops when applied to domains different from their training data (e.g., a model trained on daytime driving scenes performing poorly on nighttime or rainy conditions). Traditional fine-tuning approaches require large amounts of labeled target domain data, which is expensive and time-consuming to obtain.",
+    "source_file": "projects.md",
+    "chunk_index": 4,
+    "heading": "Problem Statement"
+  },
+  {
+    "text": "ing scenes performing poorly on nighttime or rainy conditions). Traditional fine-tuning approaches require large amounts of labeled target domain data, which is expensive and time-consuming to obtain.\n\n### Approach\n- **Base Model**: SegFormer (hierarchical Transformer encoder with a lightweight MLP decoder)\n- **MoE Integration**: Added Mixture of Experts layers that learn to route different input features to specialized expert networks based on domain characteristics\n- **Training Strategy**: Two-phase training — first pre-train on source domain, then adapt using MoE routing with minimal target domain supervision\n- **Evaluation**: Tested on Cityscapes → ACDC (adverse conditions) and GTA5 → Cityscapes benchmarks",
+    "source_file": "projects.md",
+    "chunk_index": 5,
+    "heading": "Approach"
+  },
+  {
+    "text": "irst pre-train on source domain, then adapt using MoE routing with minimal target domain supervision\n- **Evaluation**: Tested on Cityscapes → ACDC (adverse conditions) and GTA5 → Cityscapes benchmarks\n\n### Results\n- Achieved 12% improvement in mean Intersection over Union (mIoU) compared to vanilla SegFormer domain adaptation\n- MoE routing learned interpretable specializations: some experts specialized in weather-related features, others in lighting conditions\n- Reduced the need for target domain labeled data by 60% compared to full fine-tuning approaches\n\n### Technologies Used\n- PyTorch, Hugging Face Transformers, MMSegmentation\n- NVIDIA A100 GPUs for training\n- Weights & Biases for experiment tracking\n- Python, NumPy, OpenCV for data preprocessing",
+    "source_file": "projects.md",
+    "chunk_index": 6,
+    "heading": "Results"
+  },
+  {
+    "text": "es\n\n### Technologies Used\n- PyTorch, Hugging Face Transformers, MMSegmentation\n- NVIDIA A100 GPUs for training\n- Weights & Biases for experiment tracking\n- Python, NumPy, OpenCV for data preprocessing\n\n### Publications\nResearch paper in preparation for submission to a computer vision conference.\n\n---\n\n## Portfolio Website\n\n### Overview\nPersonal portfolio website showcasing projects, skills, and professional experience. Built with modern web technologies and featuring an interactive resume chatbot (this project).",
+    "source_file": "projects.md",
+    "chunk_index": 7,
+    "heading": "Technologies Used"
+  },
+  {
+    "text": "ebsite\n\n### Overview\nPersonal portfolio website showcasing projects, skills, and professional experience. Built with modern web technologies and featuring an interactive resume chatbot (this project).\n\n### Technical Details\n- **Frontend**: HTML, CSS, JavaScript with responsive design\n- **Hosting**: Deployed on Vercel/Netlify\n- **Features**: Project showcase, blog section, contact form, interactive resume chatbot widget\n- **Design**: Dark theme with glassmorphism effects, smooth animations, and mobile-first approach\n\n---\n\n## AI Accessibility Tool — Hackathon Winner\n\n### Overview\nAn AI-powered tool that automatically generates alt-text descriptions for images on websites, making web content more accessible for visually impaired users. Won 1st place at University Hackathon 2024.",
+    "source_file": "projects.md",
+    "chunk_index": 8,
+    "heading": "Overview"
+  },
+  {
+    "text": "n AI-powered tool that automatically generates alt-text descriptions for images on websites, making web content more accessible for visually impaired users. Won 1st place at University Hackathon 2024.\n\n### Technical Details\n- Built in 36 hours during a hackathon\n- Uses a fine-tuned vision-language model for image captioning\n- Browser extension that scans web pages and fills in missing alt-text\n- Backend API processing images and returning descriptive captions\n- **Tech stack**: Python, FastAPI, Hugging Face models, JavaScript browser extension",
+    "source_file": "projects.md",
+    "chunk_index": 9,
+    "heading": "Technical Details"
+  },
+  {
+    "text": "# Resume — [Your Name]\n\n## Contact\n- **Email**: your.email@example.com\n- **LinkedIn**: linkedin.com/in/yourprofile\n- **GitHub**: github.com/yourusername\n- **Portfolio**: yourportfolio.com\n\n## Summary\nPassionate software engineer and researcher with expertise in machine learning, blockchain technology, and full-stack development. Experienced in building production-grade systems that bridge cutting-edge research with practical applications. Strong foundation in computer science fundamentals, cryptography, and distributed systems.\n\n## Education",
+    "source_file": "resume.md",
+    "chunk_index": 0,
+    "heading": "Resume — [Your Name]"
+  },
+  {
+    "text": "uilding production-grade systems that bridge cutting-edge research with practical applications. Strong foundation in computer science fundamentals, cryptography, and distributed systems.\n\n## Education\n\n### Bachelor of Science in Computer Science\n**University Name** — Expected Graduation: 2026\n- GPA: 3.8/4.0\n- Relevant Coursework: Machine Learning, Deep Learning, Cryptography, Distributed Systems, Data Structures & Algorithms, Software Engineering\n- Dean's List: Fall 2023, Spring 2024, Fall 2024\n\n## Technical Skills\n\n### Programming Languages\n- **Proficient**: Python, JavaScript/TypeScript, C++\n- **Familiar**: Rust, Go, Solidity",
+    "source_file": "resume.md",
+    "chunk_index": 1,
+    "heading": "Education"
+  },
+  {
+    "text": "are Engineering\n- Dean's List: Fall 2023, Spring 2024, Fall 2024\n\n## Technical Skills\n\n### Programming Languages\n- **Proficient**: Python, JavaScript/TypeScript, C++\n- **Familiar**: Rust, Go, Solidity\n\n### Machine Learning & AI\n- PyTorch, TensorFlow, Hugging Face Transformers\n- Scikit-learn, NumPy, Pandas\n- Model fine-tuning, transfer learning, domain adaptation\n- RAG systems, embeddings, vector databases\n\n### Blockchain & Cryptography\n- Smart contract development (Solidity)\n- Cryptographic protocols and hash functions\n- Distributed ledger technology\n- Consensus mechanisms\n\n### Web Development\n- FastAPI, Flask, Node.js, Express\n- React, Next.js, HTML/CSS\n- PostgreSQL, MongoDB, Redis\n- Docker, CI/CD, AWS/GCP\n\n## Work Experience",
+    "source_file": "resume.md",
+    "chunk_index": 2,
+    "heading": "Technical Skills"
+  },
+  {
+    "text": "ed ledger technology\n- Consensus mechanisms\n\n### Web Development\n- FastAPI, Flask, Node.js, Express\n- React, Next.js, HTML/CSS\n- PostgreSQL, MongoDB, Redis\n- Docker, CI/CD, AWS/GCP\n\n## Work Experience\n\n### Machine Learning Research Assistant\n**University AI Lab** — January 2025 – Present\n- Conducting research on domain adaptation techniques using Mixture of Experts (MoE) architectures\n- Implementing and evaluating SegFormer-based models for semantic segmentation tasks\n- Achieved 12% improvement in cross-domain accuracy using novel MoE routing strategies\n- Publishing findings in collaboration with senior researchers",
+    "source_file": "resume.md",
+    "chunk_index": 3,
+    "heading": "Web Development"
+  },
+  {
+    "text": "ormer-based models for semantic segmentation tasks\n- Achieved 12% improvement in cross-domain accuracy using novel MoE routing strategies\n- Publishing findings in collaboration with senior researchers\n\n### Software Engineering Intern\n**Tech Company** — Summer 2024\n- Developed RESTful APIs serving 10,000+ daily requests using FastAPI and PostgreSQL\n- Implemented automated testing pipeline reducing bug escape rate by 35%\n- Designed and deployed microservices architecture on AWS using Docker and Kubernetes\n- Collaborated with a team of 8 engineers in an Agile/Scrum environment",
+    "source_file": "resume.md",
+    "chunk_index": 4,
+    "heading": "Software Engineering Intern"
+  },
+  {
+    "text": "g pipeline reducing bug escape rate by 35%\n- Designed and deployed microservices architecture on AWS using Docker and Kubernetes\n- Collaborated with a team of 8 engineers in an Agile/Scrum environment\n\n### Freelance Developer\n**Self-employed** — 2023 – 2024\n- Built custom web applications for 5+ clients using React and Node.js\n- Developed automated data pipelines for small businesses\n- Provided technical consulting on cloud architecture and deployment\n\n## Certifications\n- AWS Certified Cloud Practitioner (2024)\n- Deep Learning Specialization — Coursera (2024)\n- Blockchain Fundamentals — edX (2023)",
+    "source_file": "resume.md",
+    "chunk_index": 5,
+    "heading": "Freelance Developer"
+  },
+  {
+    "text": "cal consulting on cloud architecture and deployment\n\n## Certifications\n- AWS Certified Cloud Practitioner (2024)\n- Deep Learning Specialization — Coursera (2024)\n- Blockchain Fundamentals — edX (2023)\n\n## Activities & Leadership\n- **AI/ML Club** — Vice President, organized workshops and hackathons\n- **Open Source Contributor** — Active contributor to PyTorch ecosystem\n- **Hackathon Winner** — 1st place at University Hackathon 2024 (built an AI-powered accessibility tool)",
+    "source_file": "resume.md",
+    "chunk_index": 6,
+    "heading": "Certifications"
+  }
+]

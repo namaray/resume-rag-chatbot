@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive AI chatbot — ask questions about skills, projects, and experience. Powered by RAG and Gemini.">
+    <title>Resume Chatbot — Ask Me Anything</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ═══════════════ Background particles ═══════════════ -->
+    <div class="bg-particles" aria-hidden="true">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+    </div>
+
+    <!-- ═══════════════ Main container ═══════════════ -->
+    <div class="app-container">
+
+        <!-- ── Header ─────────────────────────────────── -->
+        <header class="chat-header" id="chat-header">
+            <div class="header-left">
+                <div class="avatar-ring">
+                    <div class="avatar" id="avatar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"/>
+                            <path d="M8.56 9.8A4.002 4.002 0 0 1 12 2"/>
+                            <path d="M12 10c-4.42 0-8 2.24-8 5v2h16v-2c0-2.76-3.58-5-8-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="header-info">
+                    <h1>Resume Chatbot</h1>
+                    <p class="status" id="status-text">
+                        <span class="status-dot online"></span>
+                        Ready to chat
+                    </p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn-icon" id="btn-info" title="How this works" aria-label="How this works">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- ── Messages area ──────────────────────────── -->
+        <main class="chat-messages" id="chat-messages" role="log" aria-live="polite">
+
+            <!-- Welcome message (inserted by JS) -->
+
+        </main>
+
+        <!-- ── Suggestion chips ───────────────────────── -->
+        <div class="suggestions-bar" id="suggestions-bar">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- ── Input area ─────────────────────────────── -->
+        <footer class="chat-input-area" id="chat-input-area">
+            <div class="input-wrapper">
+                <textarea
+                    id="chat-input"
+                    placeholder="Ask about skills, projects, experience..."
+                    rows="1"
+                    maxlength="500"
+                    aria-label="Type your question"
+                ></textarea>
+                <button class="btn-send" id="btn-send" title="Send message" aria-label="Send message" disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="input-hint">
+                <kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line
+            </p>
+        </footer>
+    </div>
+
+    <!-- ═══════════════ Info modal ═══════════════ -->
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">How This Works</h2>
+                <button class="btn-icon modal-close" id="modal-close" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="arch-step">
+                    <div class="step-icon">📄</div>
+                    <div>
+                        <h3>1. Document Ingestion</h3>
+                        <p>Resume, project docs, and technical notes are split into small, meaningful chunks and converted into vector embeddings.</p>
+                    </div>
+                </div>
+                <div class="arch-step">
+                    <div class="step-icon">🔍</div>
+                    <div>
+                        <h3>2. Semantic Retrieval</h3>
+                        <p>Your question is embedded and compared against all document chunks using FAISS to find the most relevant passages.</p>
+                    </div>
+                </div>
+                <div class="arch-step">
+                    <div class="step-icon">🤖</div>
+                    <div>
+                        <h3>3. Grounded Generation</h3>
+                        <p>Gemini 2.5 Flash generates an answer using <strong>only</strong> the retrieved context — never inventing facts or skills.</p>
+                    </div>
+                </div>
+                <div class="arch-step">
+                    <div class="step-icon">🛡️</div>
+                    <div>
+                        <h3>4. Hallucination Guard</h3>
+                        <p>A strict system prompt ensures the AI will explicitly say "I don't have that information" rather than fabricate claims.</p>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-tags">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">FAISS</span>
+                        <span class="tag">Gemini 2.5 Flash</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">RAG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>
