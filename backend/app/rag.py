@@ -181,6 +181,7 @@ def generate_answer(
 
     # Log retrieved chunks for debugging
     logger.info(
+        f"Query: '{question}' → {len(results)} chunks retrieved "
         f"(scores: {[f'{r[\"score\"]:.3f}' for r in results]})"
     )
 
