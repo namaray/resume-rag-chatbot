@@ -1,74 +1,56 @@
-# Resume — [Your Name]
+# Resume — Namare Shakib Angkon
 
 ## Contact
-- **Email**: your.email@example.com
-- **LinkedIn**: linkedin.com/in/yourprofile
-- **GitHub**: github.com/yourusername
-- **Portfolio**: yourportfolio.com
+- **GitHub**: github.com/namaray
+- **Portfolio**: namare-portfolio.vercel.app
+- **Twitter**: @namare_shakib
 
 ## Summary
-Passionate software engineer and researcher with expertise in machine learning, blockchain technology, and full-stack development. Experienced in building production-grade systems that bridge cutting-edge research with practical applications. Strong foundation in computer science fundamentals, cryptography, and distributed systems.
+A dedicated Computer Science and Engineering student at United International University, with a focus on Machine Learning, Computer Vision, Blockchain, and Cryptography. Passionate about bridging the gap between software and hardware, specializing in AI-driven applications, accessible full-stack web platforms, and embedded systems like portable hardware solutions.
 
 ## Education
 
-### Bachelor of Science in Computer Science
-**University Name** — Expected Graduation: 2026
-- GPA: 3.8/4.0
-- Relevant Coursework: Machine Learning, Deep Learning, Cryptography, Distributed Systems, Data Structures & Algorithms, Software Engineering
-- Dean's List: Fall 2023, Spring 2024, Fall 2024
+### B.Sc in Computer Science
+**United International University** — 2022 – Present
+- CGPA: 3.74 / 4.00
+- Relevant Focus: Machine Learning, Computer Vision, Blockchain, Cryptography
+
+### A-Levels (IAL)
+**Singapore International School** — 2021
+- Result: 1A 2B
+
+### IGCSE
+**Academia** — 2019
+- Result: 1A* 1A 3B
 
 ## Technical Skills
 
-### Programming Languages
-- **Proficient**: Python, JavaScript/TypeScript, C++
-- **Familiar**: Rust, Go, Solidity
+### Programming Languages & Frameworks
+- **Languages**: C/C++, Java, Python, JavaScript, PHP, HTML, CSS
+- **Frameworks & Libs**: React, Node.js, Express.js, Laravel, Tailwind CSS
+- **Databases**: MySQL, MongoDB
 
-### Machine Learning & AI
-- PyTorch, TensorFlow, Hugging Face Transformers
-- Scikit-learn, NumPy, Pandas
-- Model fine-tuning, transfer learning, domain adaptation
-- RAG systems, embeddings, vector databases
-
-### Blockchain & Cryptography
-- Smart contract development (Solidity)
-- Cryptographic protocols and hash functions
-- Distributed ledger technology
-- Consensus mechanisms
-
-### Web Development
-- FastAPI, Flask, Node.js, Express
-- React, Next.js, HTML/CSS
-- PostgreSQL, MongoDB, Redis
-- Docker, CI/CD, AWS/GCP
+### AI, Hardware & Tools
+- **AI/ML**: YOLOv8, Whisper, TensorRT, OCR integrations
+- **Hardware/Embedded**: Arduino, Raspberry Pi, Jetson Orin Nano, 3D Printing
 
 ## Work Experience
 
-### Machine Learning Research Assistant
-**University AI Lab** — January 2025 – Present
-- Conducting research on domain adaptation techniques using Mixture of Experts (MoE) architectures
-- Implementing and evaluating SegFormer-based models for semantic segmentation tasks
-- Achieved 12% improvement in cross-domain accuracy using novel MoE routing strategies
-- Publishing findings in collaboration with senior researchers
+### Freelance Annotator
+**Transperfect DataForce** — 2021 – 2024
+- Annotated Audio/Video data and interpreted audio files for the development of AI solutions.
+- Ensured high-quality data labeling and contributed to the training of robust machine learning models.
 
-### Software Engineering Intern
-**Tech Company** — Summer 2024
-- Developed RESTful APIs serving 10,000+ daily requests using FastAPI and PostgreSQL
-- Implemented automated testing pipeline reducing bug escape rate by 35%
-- Designed and deployed microservices architecture on AWS using Docker and Kubernetes
-- Collaborated with a team of 8 engineers in an Agile/Scrum environment
+## Selected Projects
 
-### Freelance Developer
-**Self-employed** — 2023 – 2024
-- Built custom web applications for 5+ clients using React and Node.js
-- Developed automated data pipelines for small businesses
-- Provided technical consulting on cloud architecture and deployment
+- **ARGUS (AI-Powered Smart Glasses)**: On-device AI navigation system for the visually impaired, integrating real-time object detection, depth estimation, and voice-command NLU on a Jetson Orin Nano. (Python, YOLOv8, TensorRT, Whisper)
+- **Portable Braille**: Engineered a low-cost, portable Braille printer that embosses digital text onto A4 paper using stepper motors, solenoid actuators, and IR sensors. (Raspberry Pi, Python, OCR, 3D Printing)
+- **ShareStrength**: Web platform connecting people with disabilities to trusted helpers using AI-based recommendations and accessibility tools. (PHP, MySQL, JavaScript, Tailwind)
+- **Maternify**: Prenatal and postnatal symptom tracking platform with intelligent risk-flag generation. Main frontend designer. (Python, AI APIs, React)
 
-## Certifications
-- AWS Certified Cloud Practitioner (2024)
-- Deep Learning Specialization — Coursera (2024)
-- Blockchain Fundamentals — edX (2023)
-
-## Activities & Leadership
-- **AI/ML Club** — Vice President, organized workshops and hackathons
-- **Open Source Contributor** — Active contributor to PyTorch ecosystem
-- **Hackathon Winner** — 1st place at University Hackathon 2024 (built an AI-powered accessibility tool)
+## Achievements
+- **Champion**, Robolution 2025 – MIST Robotics Club (Scientific Poster Presentation)
+- **Champion**, R&I Week 2025 – UIU (Scientific Poster Presentation)
+- **1st Runner-Up**, 1st S.N. Bose National Science Festival – BRAC (Scientific Poster Presentation)
+- **1st Runner-Up**, FYDP 1 Fall 2025 Project Show (Undergraduate Thesis) – UIU
+- **Pre-Seed Funding**: Received 20,000 BDT in Pre-Seed funding from Launchpad by UIHP@UIU, supported by the ICT Division & The World Bank.
