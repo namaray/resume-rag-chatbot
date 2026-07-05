@@ -1,3 +1,7 @@
+# Excluded folders
+Plans/
+plans/
+
 # Virtual environments
 venv/
 env/
