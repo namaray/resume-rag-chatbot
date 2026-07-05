@@ -12,7 +12,7 @@ A dedicated Computer Science and Engineering student at United International Uni
 
 ### B.Sc in Computer Science
 **United International University** — 2022 – Present
-- CGPA: 3.74 / 4.00
+- CGPA: 3.78 / 4.00
 - Relevant Focus: Machine Learning, Computer Vision, Blockchain, Cryptography
 
 ### A-Levels (IAL)

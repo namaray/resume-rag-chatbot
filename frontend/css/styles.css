@@ -244,6 +244,43 @@ body {
 }
 
 
+/* ── Stats Container ──────────────────────────────────────── */
+.stats-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-right: 12px;
+    padding-right: 12px;
+    border-right: 1px solid var(--border-subtle);
+    animation: fade-in var(--transition-base);
+}
+
+.stats-container[hidden] {
+    display: none;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+}
+
+.stat-icon {
+    font-size: 0.85rem;
+}
+
+.stat-item span:last-child {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
 /* ── Icon Button ────────────────────────────────────────── */
 .btn-icon {
     width: 36px;

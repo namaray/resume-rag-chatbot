@@ -15,6 +15,9 @@ const modalOverlay   = document.getElementById("modal-overlay");
 const modalClose     = document.getElementById("modal-close");
 const suggestionsBar = document.getElementById("suggestions-bar");
 const statusText     = document.getElementById("status-text");
+const statsContainer = document.getElementById("stats-container");
+const statQueries    = document.getElementById("stat-queries");
+const statTime       = document.getElementById("stat-time");
 
 // ── State ──────────────────────────────────────────────────
 let isLoading = false;
@@ -36,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderWelcome();
     loadSuggestions();
     checkHealth();
+    loadStats();
     setupEventListeners();
 });
 
@@ -136,6 +140,22 @@ function renderSuggestions(suggestions) {
     });
 }
 
+async function loadStats() {
+    try {
+        const res = await fetch(`${API_BASE_URL}/api/stats`);
+        if (res.ok) {
+            const data = await res.json();
+            if (data.total_questions > 0) {
+                statsContainer.hidden = false;
+                statQueries.textContent = data.total_questions;
+                statTime.textContent = `${data.avg_response_time_ms}ms`;
+            }
+        }
+    } catch (e) {
+        console.error("Failed to load stats", e);
+    }
+}
+
 
 // ═══════════════════════════════════════════════════════════
 // Health Check
@@ -209,6 +229,7 @@ async function handleSend() {
         if (res.ok) {
             const data = await res.json();
             addBotMessage(data);
+            loadStats();
         } else if (res.status === 429) {
             addMessage("error", "⏳ Too many requests. Please wait a moment and try again.");
         } else {

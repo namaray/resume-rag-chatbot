@@ -18,6 +18,7 @@ from app.config import get_settings
 from app.vector_store import VectorStore
 from app.rag import generate_answer
 from app.models import ChatRequest, ChatResponse, HealthResponse
+from app.stats import StatsTracker
 
 # ── Logging ───────────────────────────────────────────────────
 logging.basicConfig(
@@ -29,6 +30,7 @@ logger = logging.getLogger("resume-chatbot")
 
 # ── Shared state ──────────────────────────────────────────────
 vector_store = VectorStore()
+stats_tracker = StatsTracker(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data"))
 
 # ── Rate limiter ──────────────────────────────────────────────
 limiter = Limiter(key_func=get_remote_address)
@@ -124,6 +126,10 @@ async def chat(request: Request, body: ChatRequest):
         f"Answer generated in {response.response_time_ms}ms "
         f"({len(response.sources)} sources)"
     )
+    
+    # Record the query in stats
+    stats_tracker.record_query(response.response_time_ms)
+    
     return response
 
 
@@ -143,6 +149,11 @@ async def health():
 async def suggestions():
     """Return suggested starter questions."""
     return {"suggestions": SUGGESTIONS}
+
+@app.get("/api/stats")
+async def stats():
+    """Return live chatbot usage statistics."""
+    return stats_tracker.get_stats()
 
 # Mount frontend directory for easy local testing
 from fastapi.staticfiles import StaticFiles
