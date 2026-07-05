@@ -300,6 +300,14 @@ function addBotMessage(data) {
     `;
 
     chatMessages.appendChild(wrapper);
+    
+    // Apply syntax highlighting to code blocks
+    if (typeof hljs !== 'undefined') {
+        wrapper.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+        });
+    }
+    
     scrollToBottom();
 }
 
@@ -332,34 +340,25 @@ function scrollToBottom() {
 
 function renderMarkdown(text) {
     if (!text) return "";
-
+    
+    // Use marked.js if available
+    if (typeof marked !== 'undefined') {
+        return marked.parse(text, { breaks: true });
+    }
+    
+    // Fallback to basic rendering if marked fails to load
     let html = escapeHtml(text);
-
-    // Bold: **text**
     html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-
-    // Italic: *text* (but not inside bold)
     html = html.replace(/(?<!\*)\*([^*]+?)\*(?!\*)/g, "<em>$1</em>");
-
-    // Inline code: `text`
     html = html.replace(/`([^`]+?)`/g, "<code>$1</code>");
-
-    // Unordered lists: - item
     html = html.replace(/^- (.+)$/gm, "<li>$1</li>");
     html = html.replace(/(<li>.*<\/li>\n?)+/gs, "<ul>$&</ul>");
-
-    // Line breaks: double newline → paragraph, single newline → <br>
     html = html.replace(/\n\n/g, "</p><p>");
     html = html.replace(/\n/g, "<br>");
     html = `<p>${html}</p>`;
-
-    // Clean up empty paragraphs
     html = html.replace(/<p>\s*<\/p>/g, "");
-
-    // Fix lists wrapped in paragraphs
     html = html.replace(/<p>(<ul>)/g, "$1");
     html = html.replace(/(<\/ul>)<\/p>/g, "$1");
-
     return html;
 }
 
